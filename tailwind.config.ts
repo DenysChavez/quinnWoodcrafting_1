@@ -13,11 +13,9 @@ module.exports = {
           90: '#292C27',
         },
         gray: {
-          10: '#EEEEEE',
-          20: '#A2A2A2',
-          30: '#7B7B7B',
-          50: '#585858',
-          90: '#141414',
+          10: '#A2A2A2',
+          20: '#4F4F4F',
+          30: '#3A3A3A',
         },
         orange: {
           50: '#FF814C',
@@ -28,6 +26,12 @@ module.exports = {
         yellow: {
           50: '#FEC601',
         },
+        background: {
+          10: '#252A27',
+        },
+        gold: {
+          10: '#E6A666',
+        }
       },
       backgroundImage: {
         'bg-img-1': "url('/img-1.png')",
