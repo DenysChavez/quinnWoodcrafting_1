@@ -1,5 +1,13 @@
+import Gallery from "@/components/Gallery";
+import Hero from "@/components/Hero";
+import LatestProducts from "@/components/LatestProducts";
+
 export default function Home() {
   return (
-    <h1 className="text-teal-500">Hello Micho</h1>
+    <>
+      <Hero />
+      <LatestProducts />
+      <Gallery />
+    </>
   )
 }
