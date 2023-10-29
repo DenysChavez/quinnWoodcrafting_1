@@ -90,6 +90,11 @@ body {
     @apply text-[14px] font-[400];
   }
 
+  .regular-64 {
+    @apply text-[64px] font-[500] leading-[120%];
+  }
+
+
   .medium-14 {
     @apply text-[14px] font-[600];
   }
@@ -127,8 +132,8 @@ body {
   }
 
   /* Hero */
-  .hero-map {
-    @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center md:-right-28 xl:-top-60;
+  .hero-imagen {
+    @apply mt-8 w-full block h-[450px] bg-pattern-2 bg-center bg-cover bg-no-repeat
   }
 
   /* Camp */

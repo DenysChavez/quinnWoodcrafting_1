@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-background-10">
+    <div className=" bg-background-10">
       <nav className="bg-background-10 flexBetween max-container padding-container relative z-30 py-1 w-full">
         <Link href="/">
           <Image src="/logo.svg" alt="logo" width={125} height={82} />
@@ -33,7 +33,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div onClick={toggleMobileMenu}>
+        <div onClick={toggleMobileMenu} className="lg:hidden">
           <Image
             src="/menu.svg"
             alt="menu"

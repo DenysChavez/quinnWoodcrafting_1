@@ -40,11 +40,12 @@ module.exports = {
         }
       },
       backgroundImage: {
+        'hero-gradient': 'linear-gradient(to bottom, white 50%, #252A27 50%)',
         'bg-img-1': "url('/img-1.png')",
-        'bg-img-2': "url('/img-2.png')",
+        'bg-img-2': "url('/wood_hammer.jpg')",
         'feature-bg': "url('/feature-bg.png')",
         pattern: "url('/pattern.png')",
-        'pattern-2': "url('/pattern-bg.png')",
+        'pattern-2': "url('/wood_hammer.jpg')",
       },
       screens: {
         xs: '400px',
