@@ -1,12 +1,10 @@
 // NAVIGATION
 export const NAV_LINKS = [
-    { href: '/', key: 'about_us', label: 'About Us' },
-    { href: '/', key: 'products', label: 'Products' },
-    { href: '/', key: 'workshops_and_events', label: 'Workshops & Events' },
-    { href: '/', key: 'request', label: 'Request' },
+    { href: '/', key: 'about_us', label: 'About Us', color: 'text-white' },
+    { href: '/', key: 'products', label: 'Products', color: 'text-gold-10' },
+    { href: '/', key: 'workshops_and_events', label: 'Workshops & Events', color: 'text-white' },
+    { href: '/', key: 'request', label: 'Request', color: 'text-gold-10'},
 ];
-  
-export const NAV_COLORS = ['text-white', 'text-gold-10']
   
   // CAMP SECTION
   export const PEOPLE_URL = [

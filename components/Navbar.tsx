@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { NAV_COLORS, NAV_LINKS } from "@/constants";
+import { NAV_LINKS } from "@/constants";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,12 +20,9 @@ const Navbar = () => {
 
         <ul className="hidden h-full gap-12 lg:flex">
           {NAV_LINKS.map((link, index) => (
-            <li key={link.key}>
+            <li key={link.key} className={`regular-24 ${link.color} flexCenter cursor-pointer pb-1.5 transition-all hover:text-shadow-custom`}>
               <Link
                 href={link.href}
-                className={`regular-24 ${
-                  NAV_COLORS[index % NAV_COLORS.length]
-                } flexCenter cursor-pointer pb-1.5 transition-all hover:text-shadow-custom hover:font-bold`}
               >
                 {link.label}
               </Link>
@@ -33,13 +30,14 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div onClick={toggleMobileMenu} className="lg:hidden">
+        <div className="lg:hidden">
           <Image
             src="/menu.svg"
             alt="menu"
             width={32}
             height={32}
             className="hover:text-shadow-custom inline-block cursor-pointer lg:hidden"
+            onClick={toggleMobileMenu}
           />
         </div>
 
@@ -50,9 +48,7 @@ const Navbar = () => {
               <li key={link.key}>
                 <Link
                   href={link.href}
-                  className={`regular-24 ${
-                    NAV_COLORS[index % NAV_COLORS.length]
-                  } flexCenter cursor-pointer pb-1.5 transition-all hover:text-shadow-custom hover:font-bold`}
+                  className={`regular-24 ${link.color} flexCenter cursor-pointer pb-1.5 transition-all hover:text-shadow-custom hover:font-bold`}
                   onClick={toggleMobileMenu}
                 >
                   {link.label}
