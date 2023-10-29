@@ -1,4 +1,10 @@
 /** @type {import('tailwindcss').Config} */
+type Utilities = {
+  [key: string]: {
+    [key: string]: string;
+  };
+};
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -51,7 +57,24 @@ module.exports = {
       borderRadius: {
         '5xl': '40px',
       },
+      textShadow: {
+        'custom': '2px 2px 10px rgb(0, 0, 0), 0 0 25px white, 0 0 5px white'
+      }
     },
+    variants: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }: { addUtilities: (utilities: Utilities, variants: string[]) => void }) {
+      const newUtilities = {
+        '.text-shadow-custom': {
+          textShadow: '2px 2px 10px rgb(0, 0, 0), 0 0 25px white, 0 0 5px white',
+        },
+        '.hover\\:text-shadow-custom:hover': {
+          textShadow: '2px 2px 10px rgb(0, 0, 0), 0 0 25px white, 0 0 5px white',
+        }
+      };
+  
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    }
+  ],
 };
