@@ -24,7 +24,8 @@ function LatestProducts() {
   ];
 
   return (
-    <section className="border-2 border-red-500 bg-background-10 max-container padding-container flex flex-col gap-5 py-10">
+    <div className="bg-background-10">
+<section className=" bg-background-10 max-container padding-container flex flex-col gap-5 py-10">
       <h2 className="text-white text-3xl text-center">LATEST PRODUCTS</h2>
       <div className="flex flex-row mb-[10px] gap-[1.2rem]">
         {products.map((product, index) => (
@@ -47,6 +48,8 @@ function LatestProducts() {
         ))}
       </div>
     </section>
+    </div>
+    
   );
 }
 
