@@ -14,38 +14,35 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        green: {
-          50: '#30AF5B',
-          90: '#292C27',
-        },
         gray: {
           10: '#A2A2A2',
           20: '#4F4F4F',
           30: '#3A3A3A',
-        },
-        orange: {
-          50: '#FF814C',
-        },
-        blue: {
-          70: '#021639',
-        },
-        yellow: {
-          50: '#FEC601',
         },
         background: {
           10: '#252A27',
         },
         gold: {
           10: '#E6A666',
+        },
+        brown: {
+          10: '#494231'
         }
       },
       backgroundImage: {
         'hero-gradient': 'linear-gradient(to bottom, white 50%, #252A27 50%)',
+        'product-border':'linear-gradient(to bottom, #494231, #494231), linear-gradient(to right, #494231, #494231), linear-gradient(to left, #494231, #494231)',
         'bg-img-1': "url('/img-1.png')",
         'bg-img-2': "url('/wood_hammer.jpg')",
         'feature-bg': "url('/feature-bg.png')",
         pattern: "url('/pattern.png')",
         'pattern-2': "url('/wood_hammer.jpg')",
+      },
+      backgroundSize: {
+        'border-size': '5px 30%, 100% 5px, 5px 30%',
+      },
+      backgroundPosition: {
+        'border-position': 'left bottom, bottom left, right bottom',
       },
       screens: {
         xs: '400px',
