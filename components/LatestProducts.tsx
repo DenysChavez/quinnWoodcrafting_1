@@ -27,7 +27,7 @@ function LatestProducts() {
     <div className="bg-background-10">
 <section className=" bg-background-10 max-container padding-container flex flex-col gap-5 py-10">
       <h2 className="text-white text-3xl text-center">LATEST PRODUCTS</h2>
-      <div className="flex justify-between flex-row mb-[10px] gap-[20px]">
+      <div className="grid grid-flow-col scroll-auto gap-[1.2rem] overflow-y-auto overscroll-x-contain scroll-snap-x scrollbar-none carrousel">
         {products.map((product, index) => (
           <div
             key={index}

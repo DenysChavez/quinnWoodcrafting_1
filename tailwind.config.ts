@@ -69,6 +69,15 @@ module.exports = {
         },
         '.hover\\:text-shadow-custom:hover': {
           textShadow: '2px 2px 10px rgb(0, 0, 0), 0 0 25px white, 0 0 5px white',
+        },
+        '.scroll-snap-x': {
+          'scroll-snap-type': 'x mandatory',
+        },
+        '.scrollbar-none': {
+          'scrollbar-width': 'none',
+        },
+        '.carrousel::-webkit-scrollbar': {
+          display: 'none',
         }
       };
   
