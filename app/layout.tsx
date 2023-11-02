@@ -2,10 +2,9 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/app/ui/dashboard/Navbar";
+import Footer from "@/app/ui/dashboard/Footer";
 import { crimsonPro } from "./ui/fonts";
-
 
 export const metadata: Metadata = {
   title: "Quinn Woodcrafting",
