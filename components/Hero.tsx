@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <div className="bg-hero-gradient">
+    <div className="bg-hero-gradient mt-16">
       <section className="max-container padding-container flex flex-col gap-5 py-10">
         <div className="relative z-20 flex flex-1 flex-col items-center mt-5">
           <h1 className="regular-64 text-center">Quinn Woodcrafting</h1>
