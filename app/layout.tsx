@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { crimsonPro } from "./ui/fonts";
+
 
 export const metadata: Metadata = {
   title: "Quinn Woodcrafting",
@@ -17,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${crimsonPro.className} antialiased`}>
         <Navbar />
         <main className="relative overflow-hidden">{children}</main>
         <Footer />
