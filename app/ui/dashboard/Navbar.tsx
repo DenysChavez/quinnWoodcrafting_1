@@ -6,6 +6,10 @@ import NavLinks from "./nav-links";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen((prevState) => !prevState);
@@ -19,7 +23,7 @@ const Navbar = () => {
         </Link>
 
         <ul className="hidden h-full gap-12 lg:flex">
-          <NavLinks />
+          <NavLinks onLinkClick={closeMobileMenu}/>
         </ul>
 
         <div className="lg:hidden">
@@ -36,7 +40,7 @@ const Navbar = () => {
         {/* Mobile menu */}
         {isMobileMenuOpen && (
           <ul className="absolute top-full left-0 w-full bg-background-10 flex flex-col gap-6 mt-2 p-4 lg:hidden">
-            <NavLinks />
+            <NavLinks onLinkClick={closeMobileMenu}/>
           </ul>
         )}
       </nav>
