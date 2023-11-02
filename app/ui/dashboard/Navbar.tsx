@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { NAV_LINKS } from "@/constants";
+import NavLinks from "./nav-links";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,16 +19,7 @@ const Navbar = () => {
         </Link>
 
         <ul className="hidden h-full gap-12 lg:flex">
-          {NAV_LINKS.map((link, index) => (
-            <li key={link.key}>
-              <Link
-                className={`regular-24 ${link.color} flexCenter cursor-pointer pb-1.5 transition-all hover:text-shadow-custom`}
-                href={link.href}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          <NavLinks />
         </ul>
 
         <div className="lg:hidden">
@@ -45,17 +36,7 @@ const Navbar = () => {
         {/* Mobile menu */}
         {isMobileMenuOpen && (
           <ul className="absolute top-full left-0 w-full bg-background-10 flex flex-col gap-6 mt-2 p-4 lg:hidden">
-            {NAV_LINKS.map((link, index) => (
-              <li key={link.key}>
-                <Link
-                  href={link.href}
-                  className={`regular-24 ${link.color} flexCenter cursor-pointer pb-1.5 transition-all hover:text-shadow-custom hover:font-bold`}
-                  onClick={toggleMobileMenu}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            <NavLinks />
           </ul>
         )}
       </nav>
