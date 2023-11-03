@@ -2,7 +2,7 @@
 export const NAV_LINKS = [
     { href: '/about', key: 'about_us', label: 'About Us', color: 'text-white' },
     { href: '/products', key: 'products', label: 'Products', color: 'text-gold-10' },
-    { href: '/workshops_and_events', key: 'workshops_and_events', label: 'Workshops & Events', color: 'text-white' },
+    { href: '/events', key: 'events', label: 'Events', color: 'text-white' },
     { href: '/request', key: 'request', label: 'Request', color: 'text-gold-10'},
 ];
   
@@ -18,7 +18,7 @@ export const NAV_LINKS = [
     },
     {
       title: 'Sitemap',
-      links: [['About Us', "/about"], ['Products', "/products"], ['Workshops & Events', "workshops_and_events"], ],
+      links: [['About Us', "/about"], ['Products', "/products"], ['Events', "events"], ],
     },
     {
       title: 'Contact Us',
