@@ -1,9 +1,14 @@
 "use client";
+import { error } from "console";
 import { FormEvent, useEffect, useRef, useState } from "react";
 
 const Form = () => {
   const [data, setData] = useState();
   const phoneNumberRef = useRef(null);
+  const [erro, setError] = useState([]);
+
+  // const sendData = async (formData: FormData) => {
+  // };
 
   const handlePhoneNumberInput = () => {
     const input: any = phoneNumberRef.current;
@@ -32,14 +37,24 @@ const Form = () => {
     const formData = new FormData(form);
     const formDataObject = Object.fromEntries(formData);
 
-    const data = await fetch("/api/form", {
+    const res = await fetch("api/contact", {
       method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify(formDataObject),
-    }).then((res) => res.json());
+    });
 
-    setData(data);
-    form.reset();
+    console.log(res);
+    // const { msg } = await res.json();
+    // setError(msg);
+    // console.log(erro);
+
+    // setData(data);
+    // form.reset();
   };
+
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:w-1/2">
       <label htmlFor="name">
@@ -56,6 +71,9 @@ const Form = () => {
         Email <span className="text-gold-10">*</span>
       </label>
       <input
+        minLength={5}
+        maxLength={30}
+        type="email"
         className="rounded-lg border border-black"
         name="email"
         placeholder="email"
@@ -69,17 +87,19 @@ const Form = () => {
         name="phoneNumber"
         placeholder="Phone Number: 123-456-7890"
         autoComplete="off"
-        required
-              ref={phoneNumberRef}
-              maxLength={12}
+        ref={phoneNumberRef}
+        maxLength={12}
       />
-      <label htmlFor="description">
+      <label htmlFor="details">
         Details <span className="text-gold-10">*</span>
       </label>
-      <input
+      <textarea
         className="rounded-lg border border-black"
-        name="description"
-        placeholder="description"
+        rows={4}
+        minLength={10}
+        maxLength={500}
+        name="details"
+        placeholder="details"
         required
       />
       <p>
