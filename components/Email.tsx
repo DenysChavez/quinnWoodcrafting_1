@@ -14,12 +14,13 @@ interface EmailProps {
   name: string;
   email: string;
   phoneNumber: string;
-    details: string;
+  details: string;
 }
 
 export const Email: React.FC<Readonly<EmailProps>> = ({
   name,
   email,
+  phoneNumber,
   details,
 }) => {
   return (
@@ -35,8 +36,13 @@ export const Email: React.FC<Readonly<EmailProps>> = ({
               Hello Kevin & Dan,
             </Text>
             <Text className="text-[14px] leading-[24px] text-black">
-              You got an email from <strong>{name}</strong>. Their email is{" "}
-              {email}. The Details: <br />
+              You got an email from <strong>{name}</strong>.
+              <br />
+              Their email is {email}.
+              <br />
+              Their Phone Number: {phoneNumber}.
+              <br />
+              The Details: <br />
               {details}
             </Text>
           </Container>

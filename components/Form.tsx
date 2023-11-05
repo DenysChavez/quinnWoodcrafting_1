@@ -30,23 +30,6 @@ const Form = () => {
     const formData = new FormData(form);
     const formDataObject = Object.fromEntries(formData);
 
-    // try {
-    //   await fetch("/api/contact", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(formDataObject),
-    //   });
-
-    //   console.log(formDataObject);
-    //   form.reset();
-
-    // } catch (error) {
-    //   // Handle error
-    //   console.error("Failed to send email:", error);
-    // }
-
     try {
       // Send email using Nodemailer
       await fetch("/api/contact", {
