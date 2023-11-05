@@ -2,8 +2,8 @@
 import { validationSchema } from "@/utils/validation";
 import { Formik } from "formik";
 
-// import { ToastContainer, toast } from "react-toastify";
-// import Confetti from "react-confetti";
+import { ToastContainer, toast } from "react-toastify";
+import Confetti from "react-confetti";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 
@@ -15,7 +15,7 @@ type FormValue = {
 };
 
 const Form = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
   // const [data, setData] = useState();
   const phoneNumberRef = useRef(null);
   // const [erro, setError] = useState([]);
@@ -30,7 +30,25 @@ const Form = () => {
     const formData = new FormData(form);
     const formDataObject = Object.fromEntries(formData);
 
+    // try {
+    //   await fetch("/api/contact", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(formDataObject),
+    //   });
+
+    //   console.log(formDataObject);
+    //   form.reset();
+
+    // } catch (error) {
+    //   // Handle error
+    //   console.error("Failed to send email:", error);
+    // }
+
     try {
+      // Send email using Nodemailer
       await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -39,12 +57,17 @@ const Form = () => {
         body: JSON.stringify(formDataObject),
       });
 
-      console.log(formDataObject);
+      // Reset the form
       form.reset();
-      
+
+      // Show success message or redirect to a thank you page
+      console.log("Email Sent successfully!");
     } catch (error) {
       // Handle error
       console.error("Failed to send email:", error);
+    } finally {
+      toast.success("Request Submitted Successfully!");
+      setShowConfetti(true);
     }
   };
   // const handlePhoneNumberInput = () => {
@@ -94,57 +117,80 @@ const Form = () => {
   // };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:w-1/2">
-      <label htmlFor="name">
-        Name <span className="text-gold-10">*</span>
-      </label>
-      <input
-        className="border border-black rounded-lg"
-        name="name"
-        placeholder="name"
-        autoComplete="off"
-        required
+    <>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:w-1/2">
+        <label htmlFor="name">
+          Name <span className="text-gold-10">*</span>
+        </label>
+        <input
+          className="border border-black rounded-lg"
+          name="name"
+          placeholder="name"
+          autoComplete="off"
+          required
+        />
+        <label htmlFor="email">
+          Email <span className="text-gold-10">*</span>
+        </label>
+        <input
+          minLength={5}
+          maxLength={30}
+          type="email"
+          className="rounded-lg border border-black"
+          name="email"
+          placeholder="email"
+          required
+        />
+        <label htmlFor="phoneNumber">Phone Number</label>
+        <input
+          type="tel"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          className="border border-black rounded-lg"
+          name="phoneNumber"
+          placeholder="Phone Number: 123-456-7890"
+          autoComplete="off"
+          ref={phoneNumberRef}
+          maxLength={12}
+        />
+        <label htmlFor="details">
+          Details <span className="text-gold-10">*</span>
+        </label>
+        <textarea
+          className="rounded-lg border border-black"
+          rows={4}
+          minLength={10}
+          maxLength={500}
+          name="details"
+          placeholder="details"
+          required
+        />
+        <p>
+          <span className="text-gold-10">*</span> Require Infomation
+        </p>
+        <button className="rounded-lg bg-black py-2 text-white">Submit</button>
+      </form>
+
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
       />
-      <label htmlFor="email">
-        Email <span className="text-gold-10">*</span>
-      </label>
-      <input
-        minLength={5}
-        maxLength={30}
-        type="email"
-        className="rounded-lg border border-black"
-        name="email"
-        placeholder="email"
-        required
-      />
-      <label htmlFor="phoneNumber">Phone Number</label>
-      <input
-        type="tel"
-        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-        className="border border-black rounded-lg"
-        name="phoneNumber"
-        placeholder="Phone Number: 123-456-7890"
-        autoComplete="off"
-        ref={phoneNumberRef}
-        maxLength={12}
-      />
-      <label htmlFor="details">
-        Details <span className="text-gold-10">*</span>
-      </label>
-      <textarea
-        className="rounded-lg border border-black"
-        rows={4}
-        minLength={10}
-        maxLength={500}
-        name="details"
-        placeholder="details"
-        required
-      />
-      <p>
-        <span className="text-gold-10">*</span> Require Infomation
-      </p>
-      <button className="rounded-lg bg-black py-2 text-white">Submit</button>
-    </form>
+
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          recycle={false}
+        />
+      )}
+    </>
   );
 };
 
