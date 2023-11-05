@@ -1,20 +1,31 @@
-import { transpoter, mailOptions } from '../../ui/config/nodemailer'
+import { NextRequest, NextResponse } from "next/server";
 
-export const POST = async (req: any, res: any) => {
-    const data = await req.json();
-    try {
-        await transpoter.sendMail({
-            ...mailOptions,
-            subject: 'New Request',
-            text: 'This is a test string',
-            html: "<h1>Test title</h1> <p>Somo body</p>"
-        }) 
+import { render } from "@react-email/components";
 
-        return res.status(200).json({success: true})
-    } catch (error) {
-        console.error(error);
-        return res.status(400).json({message: 'Bad Request'})
-    }
-    
+import { transporter, smtpEmail } from "@/utils/nodemailer";
 
+import { Email } from "../../../components/Email";
+
+export async function POST(req: NextRequest, res: NextResponse) {
+  const body = await req.json();
+  const { name, email, details, phoneNumber } = body;
+
+  const emailHtml = render(
+    <Email name={name} email={email} details={details} phoneNumber={phoneNumber} />
+  );
+
+  const options = {
+    from: smtpEmail,
+    to: smtpEmail,
+    subject: "New Request Submission",
+    html: emailHtml,
+  };
+
+  try {
+    // Send email using the transporter
+    await transporter.sendMail(options);
+  } catch (error) {
+    console.error("Failed to send email:", error);
+  }
+  return new Response("OK");
 }
