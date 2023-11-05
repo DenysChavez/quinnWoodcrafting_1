@@ -1,7 +1,9 @@
+import Form from "@/components/Form";
+
 const page = () => {
   return (
     <div className="mt-16 regular-20">
-      <section className="max-container padding-container flex flex-col gap-5 py-10 text-center justify-center">
+      <section className="max-container padding-container flex flex-col gap-5 py-10 text-center justify-center items-center">
         <h1 className="regular-40">Custom Requests</h1>
         <p>At Quinn Woodcrafting, your imagination is the only limit.</p>
         <p>
@@ -44,7 +46,8 @@ const page = () => {
           </li>
         </ul>
         <h2 className="regular-32">Start Your Custom Request</h2>
-      <p>Fill out the form below, and let's embark on the journey of crafting your unique wood piece.</p>
+        <p>Fill out the form below, and let's embark on the journey of crafting your unique wood piece.</p>
+        <Form />
       </section>
     </div>
   );
