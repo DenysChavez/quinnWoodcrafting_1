@@ -11,7 +11,7 @@ const products = [
     name: "Whiskey Smoker",
     description:
       "Elevate your whiskey experience with our sophisticated Whiskey Smoker.",
-    price: "$80.99",
+    price: "$15.00",
     imageSrc: "/wiskey_smoker.jpg",
   },
   {
