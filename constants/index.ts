@@ -13,7 +13,7 @@ export const NAV_LINKS = [
       title: 'Help',
       links: [
         ['Contact Us', "/request"],
-        ['Customer Reviews', "/"]
+        // ['Customer Reviews', "/"]
       ],
     },
     {
@@ -22,7 +22,7 @@ export const NAV_LINKS = [
     },
     {
       title: 'Contact Us',
-      links: [['Admin Officer: 123-456-789', "/"], ["Email Officer: quinnwoodcrafting@email.com", "/"]]
+      links: [['Admin Officer: (484) 620-9653', "/"], ["Email Officer: quinnwoodcrafting@gmail.com", "/"]]
     }
   ];
   
@@ -30,8 +30,8 @@ export const NAV_LINKS = [
   export const SOCIALS = {
     title: 'Social',
     links: [
-      ['/facebook.svg', '/'],
-      ['/instagram.svg', '/'],
-      ['/etsy.svg', '/'],
+      ['/facebook.svg', 'https://www.facebook.com/quinnwoodcrafting/'],
+      ['/instagram.svg', 'https://www.instagram.com/quinnwoodcrafting/'],
+      ['/etsy.svg', 'https://www.etsy.com/shop/QuinnWoodcrafting'],
     ],
   };
