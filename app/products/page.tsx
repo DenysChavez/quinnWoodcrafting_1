@@ -4,7 +4,7 @@ const products = [
   {
     name: "Olive Wood Cheese Board",
     description: "Made from a single piece of sustainably-sourced olive wood",
-    price: "$99.99",
+    price: "$20.00",
     imageSrc: "/cheese_board.jpg",
   },
   {
@@ -17,7 +17,7 @@ const products = [
   {
     name: "Wood Hammer",
     description: "Hand-carved from select hardwoods",
-    price: "$80.99",
+    price: "$25.00",
     imageSrc: "/wood_hammer.jpg",
   },
 ];
