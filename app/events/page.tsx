@@ -37,11 +37,9 @@ const page = () => {
           Until we can welcome you in person, keep crafting and keep dreaming.
         </p>
         <p>With anticipation,</p>
-        <p>
-          <span>Kevin & Dan Quinn</span>
-          <hr />
-          <span>Quinn Woodcrafting</span>
-        </p>
+        <p>Kevin & Dan Quinn</p>
+        <hr />
+        <p>Quinn Woodcrafting</p>
       </section>
     </div>
   );
