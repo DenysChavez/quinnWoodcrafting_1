@@ -5,27 +5,27 @@ function LatestProducts() {
     {
       name: "Olive Wood Cheese Board",
       description: "Made from a single piece of sustainably-sourced olive wood",
-      price: "$99.99",
+      price: "$25.00",
       imageSrc: "/cheese_board.jpg",
     },
     {
       name: "Whiskey Smoker",
       description:
         "Elevate your whiskey experience with our sophisticated Whiskey Smoker.",
-      price: "$80.99",
+      price: "$15.00",
       imageSrc: "/wiskey_smoker.jpg",
     },
     {
       name: "Wood Hammer",
       description: "Hand-carved from select hardwoods",
-      price: "$80.99",
+      price: "$25.00",
       imageSrc: "/wood_hammer.jpg",
     },
   ];
 
   return (
     <div className="bg-background-10">
-      <section className=" bg-background-10 max-container padding-container flex flex-col gap-5 py-10">
+      <section className=" bg-background-10 h-fit max-container  padding-container flex flex-col gap-5 py-10">
         <h2 className="text-white text-3xl text-center">LATEST PRODUCTS</h2>
         <div className="grid grid-flow-col scroll-auto gap-[1.2rem] overflow-y-auto overscroll-x-contain scroll-snap-x scrollbar-none carrousel">
           {products.map((product, index) => (
