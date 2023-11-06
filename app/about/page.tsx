@@ -42,11 +42,9 @@ function page() {
           wood; we're crafting memories, legacy, and love. Welcome to the
           family.
         </p>
-        <p>
-          <span>Kevin & Dan Quinn</span>
-          <hr />
-          <span>Quinn Woodcrafting</span>
-        </p>
+        <p>Kevin & Dan Quinn</p>
+        <hr />
+        <p>Quinn Woodcrafting</p>
       </section>
     </div>
   );
