@@ -49,7 +49,7 @@ const Footer = () => {
                 <ul className="flex gap-4 text-gray-10 mt-3">
                   {SOCIALS.links.map((link) => (
                     <Link href={link[1]} key={link[0]}>
-                      <Image src={link[0]} alt="logo" width={24} height={24} />
+                      <Image src={link[0]} alt="logo" width={24} height={24} quality={100}/>
                     </Link>
                   ))}
                 </ul>
