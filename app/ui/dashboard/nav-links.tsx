@@ -15,15 +15,14 @@ const NavLinks = ({ onLinkClick }: any) => {
   const pathname = usePathname();
   return (
     <>
-      {NAV_LINKS.map((link, index) => (
-        <li key={link.key} onClick={handleLinkClick}>
+      {NAV_LINKS.map((link) => (
+        <li key={link.key} onClick={handleLinkClick} className={clsx(
+          `regular-24 odd:text-white even:text-gold-10 flexCenter cursor-pointer pb-1.5 transition-all hover:text-shadow-custom`,
+          {
+            "text-shadow-custom": pathname === link.href,
+          }
+        )}>
           <Link
-            className={clsx(
-              `regular-24 ${link.color} flexCenter cursor-pointer pb-1.5 transition-all hover:text-shadow-custom`,
-              {
-                "text-shadow-custom": pathname === link.href,
-              }
-            )}
             href={link.href}
           >
             {link.label}

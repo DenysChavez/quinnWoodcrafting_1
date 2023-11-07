@@ -1,9 +1,9 @@
 // NAVIGATION
 export const NAV_LINKS = [
-    { href: '/about', key: 'about_us', label: 'About Us', color: 'text-white' },
-    { href: '/products', key: 'products', label: 'Products', color: 'text-gold-10' },
-    { href: '/events', key: 'events', label: 'Events', color: 'text-white' },
-    { href: '/request', key: 'request', label: 'Request', color: 'text-gold-10'},
+    { href: '/about', key: 'about_us', label: 'About Us' },
+    { href: '/products', key: 'products', label: 'Products' },
+    { href: '/events', key: 'events', label: 'Events'},
+    { href: '/request', key: 'request', label: 'Request'},
 ];
   
   
