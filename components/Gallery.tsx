@@ -3,7 +3,6 @@ import React from "react";
 
 const Gallery = () => {
   return (
-    <div className="bg-background-10">
       <section className="max-container padding-container flex flex-col gap-5 py-10">
         <h1 className="text-white text-center text-3xl">GALLERY</h1>
         <div className="flex flex-row flex-wrap justify-between items-center gap-[16px] mx-auto my-0 py-[20px] px-[10px]">
@@ -76,7 +75,6 @@ const Gallery = () => {
         </div>
         
       </section>
-    </div>
   );
 };
 
