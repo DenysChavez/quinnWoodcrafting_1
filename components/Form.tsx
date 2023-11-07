@@ -1,27 +1,15 @@
 "use client";
-import { validationSchema } from "@/utils/validation";
-import { Formik } from "formik";
-
 import { ToastContainer, toast } from "react-toastify";
 import Confetti from "react-confetti";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 
-type FormValue = {
-  name: string;
-  email: string;
-  phoneNumber?: string;
-  details: string;
-};
 
 const Form = () => {
   const [showConfetti, setShowConfetti] = useState(false);
-  // const [data, setData] = useState();
   const phoneNumberRef = useRef(null);
-  // const [erro, setError] = useState([]);
 
-  // const sendData = async (formData: FormData) => {
-  // };
+
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -53,51 +41,28 @@ const Form = () => {
       setShowConfetti(true);
     }
   };
-  // const handlePhoneNumberInput = () => {
-  //   const input: any = phoneNumberRef.current;
-  //    // Remove non-digit characters
-  //   let value = input.value.replace(/\D/g, "");
-  //   if (value.length > 3 && value.length <= 6) {
-  //     value = value.slice(0, 3) + "-" + value.slice(3);
-  //   } else if (value.length > 6) {
-  //     value =
-  //       value.slice(0, 3) + "-" + value.slice(3, 6) + "-" + value.slice(6);
-  //   }
-  //   input.value = value;
-  // };
 
-  // useEffect(() => {
-  //   const input: any = phoneNumberRef.current;
-  //   input.addEventListener("input", handlePhoneNumberInput);
-  //   return () => {
-  //     input.removeEventListener("input", handlePhoneNumberInput);
-  //   };
-  // }, []);
+  const handlePhoneNumberInput = () => {
+    const input: any = phoneNumberRef.current;
+     // Remove non-digit characters
+    let value = input.value.replace(/\D/g, "");
+    if (value.length > 3 && value.length <= 6) {
+      value = value.slice(0, 3) + "-" + value.slice(3);
+    } else if (value.length > 6) {
+      value =
+        value.slice(0, 3) + "-" + value.slice(3, 6) + "-" + value.slice(6);
+    }
+    input.value = value;
+  };
 
-  // const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
+  useEffect(() => {
+    const input: any = phoneNumberRef.current;
+    input.addEventListener("input", handlePhoneNumberInput);
+    return () => {
+      input.removeEventListener("input", handlePhoneNumberInput);
+    };
+  }, []);
 
-  //   const form = event.currentTarget;
-  //   const formData = new FormData(form);
-  //   const formDataObject = Object.fromEntries(formData);
-
-  // const res = await fetch("api/contact", {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-type": "application/json",
-  //     Accept: "application/json",
-  //   },
-  //   body: JSON.stringify(formDataObject),
-  // });
-
-  // console.log(res);
-  // const { msg } = await res.json();
-  // setError(msg);
-  // console.log(erro);
-
-  // setData(data);
-  // form.reset();
-  // };
 
   return (
     <>
@@ -108,7 +73,7 @@ const Form = () => {
         <input
           className="border border-black rounded-lg"
           name="name"
-          placeholder="name"
+          placeholder=" Name"
           autoComplete="off"
           required
         />
@@ -121,7 +86,7 @@ const Form = () => {
           type="email"
           className="rounded-lg border border-black"
           name="email"
-          placeholder="email"
+          placeholder=" Email"
           required
         />
         <label htmlFor="phoneNumber">Phone Number</label>
@@ -130,7 +95,7 @@ const Form = () => {
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           className="border border-black rounded-lg"
           name="phoneNumber"
-          placeholder="Phone Number: 123-456-7890"
+          placeholder=" 123-456-7890"
           autoComplete="off"
           ref={phoneNumberRef}
           maxLength={12}
@@ -144,7 +109,7 @@ const Form = () => {
           minLength={10}
           maxLength={500}
           name="details"
-          placeholder="details"
+          placeholder=" Details"
           required
         />
         <p>
