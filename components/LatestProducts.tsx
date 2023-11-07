@@ -25,13 +25,13 @@ function LatestProducts() {
 
   return (
     <section className="bg-background-10 h-fit">
-      <div className="bg-background-10 max-container  padding-container flex flex-col gap-5 py-10">
+      <div className="bg-background-10 max-container padding-container flex flex-col gap-5 py-10">
         <h2 className="text-white text-3xl text-center">LATEST PRODUCTS</h2>
         <div className="grid grid-flow-col scroll-auto gap-[1.2rem] overflow-y-auto overscroll-x-contain scroll-snap-x scrollbar-none carrousel">
           {products.map((product, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-between mb-0 product-border min-w-[342px] max-w-[342px]"
+              className="flex flex-col items-center justify-between mb-0 product-border min-w-[342px] max-w-[342px] min-h-[452px] max-h-[452px]"
             >
               <div className="h-[250px] w-[300px] relative overflow-hidden">
                 <Image
