@@ -56,6 +56,9 @@ module.exports = {
       },
       boxShadow: {
         'custom': 'rgba(0, 0, 0, 0.2) 0px 4px 8px 0px, rgba(255, 194, 73, 0.19) 0px 6px 20px',
+      },
+      gridTemplateColumns: {
+        'gallery' : 'repeat(auto-fit, minmax(300px, 1fr))'
       }
     },
     variants: {},
