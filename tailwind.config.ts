@@ -32,11 +32,7 @@ module.exports = {
       backgroundImage: {
         'hero-gradient': 'linear-gradient(to bottom, white 50%, #252A27 50%)',
         'product-border':'linear-gradient(to bottom, #494231, #494231), linear-gradient(to right, #494231, #494231), linear-gradient(to left, #494231, #494231)',
-        'bg-img-1': "url('/img-1.png')",
-        'bg-img-2': "url('/wood_hammer.jpg')",
-        'feature-bg': "url('/feature-bg.png')",
-        pattern: "url('/pattern.png')",
-        'pattern-2': "url('/wood_hammer.jpg')",
+        'pattern-2': "url('/productsImages/wood_hammer.jpg')",
       },
       backgroundSize: {
         'border-size': '5px 30%, 100% 5px, 5px 30%',

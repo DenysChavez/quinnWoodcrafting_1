@@ -11,7 +11,7 @@ const Gallery = () => {
             className="h-96 w-96 rounded-xl relative overflow-hidden box-shadow-custom"
           >
             <Image
-              src={"/whiskey_3.jpg"}
+              src={"/productsImages/whiskey_3.jpg"}
               alt="cheese board"
               fill={true}
               className="object-cover"
@@ -22,7 +22,7 @@ const Gallery = () => {
             className="h-96 w-96 rounded-xl relative overflow-hidden box-shadow-custom"
           >
             <Image
-              src={"/hammer_1.jpg"}
+              src={"/productsImages/hammer_1.jpg"}
               alt="cheese board"
               fill={true}
               className="object-cover"
@@ -33,7 +33,7 @@ const Gallery = () => {
             className="h-96 w-96 rounded-xl relative overflow-hidden box-shadow-custom"
           >
             <Image
-              src={"/cheese_board_4.jpg"}
+              src={"/productsImages/cheese_board_4.jpg"}
               alt="cheese board"
               fill={true}
               className="object-cover"
@@ -44,7 +44,7 @@ const Gallery = () => {
             className="h-96 w-96 rounded-xl relative overflow-hidden box-shadow-custom"
           >
             <Image
-              src={"/cheese_board_1.jpg"}
+              src={"/productsImages/cheese_board_1.jpg"}
               alt="cheese board"
               fill={true}
               className="object-cover"
@@ -55,7 +55,7 @@ const Gallery = () => {
             className="h-96 w-96 rounded-xl relative overflow-hidden box-shadow-custom"
           >
             <Image
-              src={"/wiskey_smoker_1.jpg"}
+              src={"/productsImages/wiskey_smoker_1.jpg"}
               alt="cheese board"
               fill={true}
               className="object-cover"
@@ -66,7 +66,7 @@ const Gallery = () => {
             className="h-96 w-96 rounded-xl relative overflow-hidden box-shadow-custom"
           >
             <Image
-              src={"/wiskey_smoker.jpg"}
+              src={"/productsImages/wiskey_smoker.jpg"}
               alt="cheese board"
               fill={true}
               className="object-cover"

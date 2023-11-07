@@ -5,20 +5,20 @@ const products = [
     name: "Olive Wood Cheese Board",
     description: "Made from a single piece of sustainably-sourced olive wood",
     price: "$20.00",
-    imageSrc: "/cheese_board.jpg",
+    imageSrc: "/productsImages/cheese_board.jpg",
   },
   {
     name: "Whiskey Smoker",
     description:
       "Elevate your whiskey experience with our sophisticated Whiskey Smoker.",
     price: "$15.00",
-    imageSrc: "/wiskey_smoker.jpg",
+    imageSrc: "/productsImages/wiskey_smoker.jpg",
   },
   {
     name: "Wood Hammer",
     description: "Hand-carved from select hardwoods",
     price: "$25.00",
-    imageSrc: "/wood_hammer.jpg",
+    imageSrc: "/productsImages/wood_hammer.jpg",
   },
 ];
 
