@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${crimsonPro.className} antialiased`}>
         <Navbar />
-        <main className="relative overflow-hidden">{children}</main>
+        <main className="relative">{children}</main>
         <Footer />
       </body>
     </html>

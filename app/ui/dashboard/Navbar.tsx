@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-background-10 fixed top-0 w-full z-30">
+    <div className="bg-background-10 fixed top-0 w-screen z-30">
       <nav className="bg-background-10 flexBetween max-container padding-container relative py-1 w-full">
         <Link href="/">
           <Image src="/logo.svg" alt="logo" width={125} height={82} />
