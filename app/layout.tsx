@@ -1,7 +1,7 @@
 // @react-server-components use client
 import type { Metadata } from "next";
 
-import "./globals.css";
+import "./ui/globals.css";
 import Navbar from "@/app/ui/dashboard/Navbar";
 import Footer from "@/app/ui/dashboard/Footer";
 import { crimsonPro } from "./ui/fonts";
