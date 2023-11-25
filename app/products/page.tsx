@@ -1,25 +1,27 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const products = [
-  {
-    name: "Olive Wood Cheese Board",
-    description: "Made from a single piece of sustainably-sourced olive wood",
-    price: "$20.00",
-    imageSrc: "/productsImages/cheese_board.jpg",
-  },
+  // {
+  //   name: "Olive Wood Cheese Board",
+  //   description: "Made from a single piece of sustainably-sourced olive wood",
+  //   price: "$20.00",
+  //   imageSrc: "/productsImages/cheese_board.jpg",
+  // },
   {
     name: "Whiskey Smoker",
     description:
       "Elevate your whiskey experience with our sophisticated Whiskey Smoker.",
-    price: "$15.00",
+    price: "$20.00",
     imageSrc: "/productsImages/wiskey_smoker.jpg",
+    url: "https://www.etsy.com/listing/1590923129/cocktail-smoker-hardwood-personalized?click_key=fd7ba77d6d0d94e940c45f02e15dfa9d1c1072b1%3A1590923129&click_sum=09385102&ref=shop_home_active_1"
   },
-  {
-    name: "Wood Hammer",
-    description: "Hand-carved from select hardwoods",
-    price: "$25.00",
-    imageSrc: "/productsImages/wood_hammer.jpg",
-  },
+  // {
+  //   name: "Wood Hammer",
+  //   description: "Hand-carved from select hardwoods",
+  //   price: "$25.00",
+  //   imageSrc: "/productsImages/wood_hammer.jpg",
+  // },
 ];
 
 const page = () => {
@@ -29,6 +31,7 @@ const page = () => {
         <h1 className="regular-40">Products</h1>
         <div className="flex flex-wrap gap-10 justify-center mt-10">
           {products.map((product, index) => (
+            <Link href={product.url}>
             <div
               key={index}
               className="flex flex-col items-center justify-between mb-0 product-border min-w-[342px] max-w-[342px]"
@@ -51,6 +54,9 @@ const page = () => {
                 {product.price}
               </span>
             </div>
+            </Link>
+              
+            
           ))}
         </div>
       </section>
