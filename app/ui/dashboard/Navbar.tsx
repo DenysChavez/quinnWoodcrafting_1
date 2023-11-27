@@ -18,9 +18,20 @@ const Navbar = () => {
   return (
     <div className="bg-background-10 fixed top-0 w-screen z-30">
       <nav className="bg-background-10 flexBetween max-container padding-container relative py-1 w-full">
-        <Link href="/">
-          <Image src="/logo.svg" alt="logo" width={125} height={82} quality={100}/>
-        </Link>
+
+         <div className="sm:w-[120px] md:w-[160px] lg:w-[180px] w-[200px]">
+          <Link href="/">
+            <Image
+              src="/logo.svg"
+              alt="logo"
+              width={125}
+              height={82}
+              style={{
+                objectFit: "contain",
+              }}
+            />
+          </Link>
+        </div>
 
         <ul className="hidden h-full gap-12 lg:flex">
           <NavLinks onLinkClick={closeMobileMenu} />
